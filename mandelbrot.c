@@ -15,6 +15,9 @@ int is_in_set(float c_real, float c_imag) {
     int iters = 0;
 
     float i_term;
+    // This is where the check for whether a point is in the set occurs
+    // The number of iterations it takes to leave the box [(-2, -2), (-2, 2), (2, 2), (2, -2)]
+    // is what determines the color of the point
     do {
         i_term = z_real*z_imag;
         z_real = z_real*z_real - z_imag*z_imag + c_real;
@@ -37,6 +40,7 @@ int main() {
     start_color();
     float x0 = STARTX;
     float y0 = STARTY;
+    // There's probably a better way to make colors!
     init_pair(1, COLOR_MAGENTA, COLOR_BLACK);
     init_pair(2, COLOR_BLUE, COLOR_BLACK);
     init_pair(3, COLOR_CYAN, COLOR_BLACK);
@@ -62,6 +66,7 @@ int main() {
             int scr_y = (y - y0) * (SIZE / maxy); // displacment = fractions of SIZE, gotta convert to fractions of MAXY/MAXX
             int scr_x = (x - x0) * (SIZE / maxx);
 
+            // There's definitely a better way to do this
             switch(color) {
                 case 1:
                     attron(COLOR_PAIR(1));
