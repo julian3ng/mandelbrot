@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 900
+#define SIZE 150
 #define GRAPHSIZE 2
 #define STARTX -GRAPHSIZE
 #define STARTY -GRAPHSIZE
@@ -49,6 +49,7 @@ int main() {
     init_pair(6, COLOR_RED, COLOR_BLACK);
     init_pair(7, COLOR_WHITE, COLOR_BLACK);
     init_pair(8, COLOR_WHITE, COLOR_BLACK);
+    init_pair(9, COLOR_BLACK, COLOR_BLACK);
 
     int maxx, maxy;
     getmaxyx(stdscr, maxy, maxx);
@@ -106,14 +107,14 @@ int main() {
                 default:
                     if (color >= 255) {
                         attron(A_BOLD);
-                        attron(COLOR_PAIR(8));
+                        attron(COLOR_PAIR(9));
                         mvaddch(scr_y, scr_x, 'x' );
-                        attroff(COLOR_PAIR(8));
+                        attroff(COLOR_PAIR(9));
                         attroff(A_BOLD);
                         break;
                     } else {
                         attron(COLOR_PAIR(8));
-                        mvaddch(scr_y, scr_x, 'A');
+                        mvaddch(scr_y, scr_x, '*');
                         attroff(COLOR_PAIR(8));
                         break;
                     }
