@@ -7,4 +7,4 @@ It gets fairly slow for a large number of iterations.
 
 Parameters are defined at the top of mandelbrot.c.
 
-[[https://raw.githubusercontent.com/julian3ng/mandelbrot/master/mandelbrot.png]]
+[[https://github.com/julian3ng/mandelbrot/master/mandelbrot.png]]
